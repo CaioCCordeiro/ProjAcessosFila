@@ -10,7 +10,7 @@ namespace projAcessosFila
     {
         private int id;
         private string nome;
-        private Queue<Log> logs;
+        private Queue<Log> logs = new Queue<Log>();
 
         public Ambiente()
         {

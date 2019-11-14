@@ -10,7 +10,7 @@ namespace projAcessosFila
     {
         private int id;
         private string nome;
-        private List<Ambiente> ambientes;
+        private List<Ambiente> ambientes = new List<Ambiente>();
 
         public Usuario()
         {

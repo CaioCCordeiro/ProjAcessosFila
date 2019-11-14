@@ -8,8 +8,11 @@ namespace projAcessosFila
 {
     class Cadastro
     {
-        private List<Usuario> usuarios;
-        private List<Ambiente> ambientes;
+        private List<Usuario> usuarios = new List<Usuario>();
+        private List<Ambiente> ambientes = new List<Ambiente>();
+
+        internal List<Usuario> Usuarios { get => usuarios; set => usuarios = value; }
+        internal List<Ambiente> Ambientes { get => ambientes; set => ambientes = value; }
 
         public Cadastro()
         {
@@ -24,7 +27,7 @@ namespace projAcessosFila
         {
             if(pesquisarUsuario(usuario).Ambientes.Count() == 0)
             {
-                if (this.usuarios.Remove(usuario))
+                if (this.usuarios.Remove(pesquisarUsuario(usuario)))
                     return true;
                 else
                     return false;
@@ -51,7 +54,7 @@ namespace projAcessosFila
 
         public bool removerAmbiente(Ambiente ambiente)
         {
-            if (this.ambientes.Remove(ambiente))
+            if (this.ambientes.Remove(pesquisarAmbiente(ambiente)))
                 return true;
             else
                 return false;
