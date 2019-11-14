@@ -16,6 +16,11 @@ namespace projAcessosFila
         {
         }
 
+        public Usuario(int id)
+        {
+            this.id = id;
+        }
+
         public Usuario(int id, string nome)
         {
             this.id = id;

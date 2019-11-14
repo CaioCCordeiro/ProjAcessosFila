@@ -35,8 +35,13 @@ namespace projAcessosFila
 
         public Usuario pesquisarUsuario(Usuario usuario)
         {
+            foreach(Usuario u in usuarios)
+            {
+                if (u.Id == usuario.Id)
+                    return u;
+            }
 
-            return null;
+            return new Usuario();
         }
 
         public void adicionarAmbiente(Ambiente ambiente)
@@ -54,7 +59,13 @@ namespace projAcessosFila
 
         public Ambiente pesquisarAmbiente(Ambiente ambiente)
         {
-            return null;
+            foreach(Ambiente a in ambientes)
+            {
+                if (a.Id == ambiente.Id)
+                    return a;
+            }
+
+            return new Ambiente();
         }
 
         public void upload()

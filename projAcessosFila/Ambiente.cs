@@ -16,6 +16,11 @@ namespace projAcessosFila
         {
         }
 
+        public Ambiente(int id)
+        {
+            this.id = id;
+        }
+
         public Ambiente(int id, string nome)
         {
             this.id = id;
