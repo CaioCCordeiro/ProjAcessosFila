@@ -73,12 +73,14 @@ namespace projAcessosFila
 
         public void upload()
         {
-
+            Upload up = new Upload(usuarios, ambientes);
         }
 
         public void download()
         {
-
+            Download down = new Download();
+            this.ambientes = down.Listaambiente;
+            this.usuarios = down.Listausuario;
         }
     }
 }
