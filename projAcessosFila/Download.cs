@@ -24,7 +24,7 @@ namespace projAcessosFila
 
         public void retornaAmbientes()
         {
-            string[] arquivos = Directory.GetFiles(@"C:\Users\caioc\source\repos\projAcessosFila\projAcessosFila\Ambientes\");
+            string[] arquivos = Directory.GetFiles(@"..\..\Ambientes\");
             int id, qtde;
             string nome;
 
@@ -57,7 +57,7 @@ namespace projAcessosFila
 
         public void retornaUsuarios()
         {
-            string[] arquivos = Directory.GetFiles(@"C:\Users\caioc\source\repos\projAcessosFila\projAcessosFila\Usuarios\");
+            string[] arquivos = Directory.GetFiles(@"..\..\Usuarios\");
             int id, qtde;
             int[] idAmbiente;
             string nome;
@@ -112,7 +112,7 @@ namespace projAcessosFila
         {
             foreach(Ambiente a in listaambiente)
             {
-                string[] arquivos = Directory.GetFiles(@"C:\Users\caioc\source\repos\projAcessosFila\projAcessosFila\Ambientes\" + a.Id);
+                string[] arquivos = Directory.GetFiles(@"..\..\Ambientes\" + a.Id);
                 DateTime dtAcesso;
                 int idUsuario;
                 bool tipoAcesso;

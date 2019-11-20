@@ -11,7 +11,7 @@ namespace projAcessosFila
     {
         public void deletaUsuario(int id)
         {
-            string fileName = @"C:\Users\caioc\source\repos\projAcessosFila\projAcessosFila\Usuarios\" + id + ".txt";
+            string fileName = @"..\..\Usuarios\" + id + ".txt";
 
             if (File.Exists(fileName))
                 File.Delete(fileName);
@@ -19,7 +19,7 @@ namespace projAcessosFila
 
         public void deletaAmbiente(int id)
         {
-            string path = @"C:\Users\caioc\source\repos\projAcessosFila\projAcessosFila\Ambientes\" + id;
+            string path = @"..\..\Ambientes\" + id;
             string fileName = path + ".txt";
 
             if (File.Exists(fileName))

@@ -29,7 +29,7 @@ namespace projAcessosFila
         {
             foreach (Ambiente a in this.listaambiente)
             {
-                string fileName = @"C:\Users\caioc\source\repos\projAcessosFila\projAcessosFila\Ambientes\" + a.Id + ".txt";
+                string fileName = @"..\..\Ambientes\" + a.Id + ".txt";
                 try
                 {
                     using (StreamWriter writer = new StreamWriter(fileName))
@@ -50,7 +50,7 @@ namespace projAcessosFila
         {
             foreach (Usuario u in this.listausuario)
             {
-                string fileName = @"C:\Users\caioc\source\repos\projAcessosFila\projAcessosFila\Usuarios\" + u.Id + ".txt";
+                string fileName = @"..\..\Usuarios\" + u.Id + ".txt";
                 try
                 {
                     using (StreamWriter writer = new StreamWriter(fileName))
@@ -76,7 +76,7 @@ namespace projAcessosFila
         {
             foreach (Ambiente a in this.listaambiente)
             {
-                string path = @"C:\Users\caioc\source\repos\projAcessosFila\projAcessosFila\Ambientes\" + a.Id;
+                string path = @"..\..\Ambientes\" + a.Id;
                 int cont = 0;
                 Directory.CreateDirectory(path);
 
