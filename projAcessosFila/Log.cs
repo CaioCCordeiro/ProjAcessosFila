@@ -12,6 +12,10 @@ namespace projAcessosFila
         private Usuario usuario;
         private bool tipoAcesso;
 
+        public Log()
+        {
+        }
+
         public Log(DateTime dtAcesso, Usuario usuario, bool tipoAcesso)
         {
             this.dtAcesso = dtAcesso;

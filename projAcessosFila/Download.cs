@@ -16,6 +16,7 @@ namespace projAcessosFila
         {
             retornaAmbientes();
             retornaUsuarios();
+            retornaLogs();
         }
 
         internal List<Usuario> Listausuario { get => listausuario; set => listausuario = value; }
@@ -103,6 +104,48 @@ namespace projAcessosFila
                 finally
                 {
                     listausuario.Add(novo);
+                }
+            }
+        }
+
+        public void retornaLogs()
+        {
+            foreach(Ambiente a in listaambiente)
+            {
+                string[] arquivos = Directory.GetFiles(@"C:\Users\caioc\source\repos\projAcessosFila\projAcessosFila\Ambientes\" + a.Id);
+                DateTime dtAcesso;
+                int idUsuario;
+                bool tipoAcesso;
+
+                Log novo = new Log();
+
+                foreach(string s in arquivos)
+                {
+                    try
+                    {
+                        using (StreamReader reader = new StreamReader(s))
+                        {
+                            dtAcesso = DateTime.Parse(reader.ReadLine());
+                            idUsuario = int.Parse(reader.ReadLine());
+                            tipoAcesso = bool.Parse(reader.ReadLine());
+
+                            foreach(Usuario u in listausuario)
+                            {
+                                if(u.Id == idUsuario)
+                                {
+                                    novo = new Log(dtAcesso, u, tipoAcesso);
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception exp)
+                    {
+                        Console.Write(exp.Message);
+                    }
+                    finally
+                    {
+                        a.registrarLog(novo);
+                    }
                 }
             }
         }

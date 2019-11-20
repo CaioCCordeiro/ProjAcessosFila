@@ -19,6 +19,7 @@ namespace projAcessosFila
 
             salvaAmbientes();
             salvaUsuarios();
+            salvaLogs();
         }
 
         internal List<Usuario> Listausuario { get => listausuario; set => listausuario = value; }
@@ -69,6 +70,36 @@ namespace projAcessosFila
                     Console.Write(exp.Message);
                 }
             }
+        }
+
+        public void salvaLogs()
+        {
+            foreach (Ambiente a in this.listaambiente)
+            {
+                string path = @"C:\Users\caioc\source\repos\projAcessosFila\projAcessosFila\Ambientes\" + a.Id;
+                int cont = 0;
+                Directory.CreateDirectory(path);
+
+                foreach(Log l in a.Logs)
+                {
+                    cont++;
+                    string fileName = path + @"\" + cont + ".txt";
+                    try
+                    {
+                        using (StreamWriter writer = new StreamWriter(fileName))
+                        {
+                            writer.WriteLine(l.DtAcesso);
+                            writer.WriteLine(l.Usuario.Id);
+                            writer.WriteLine(l.TipoAcesso);
+                        }
+                    }
+                    catch (Exception exp)
+                    {
+                        Console.Write(exp.Message);
+                    }
+                }
+            }
+                
         }
     }
 

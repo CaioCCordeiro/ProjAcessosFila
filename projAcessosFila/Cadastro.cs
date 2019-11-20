@@ -10,6 +10,7 @@ namespace projAcessosFila
     {
         private List<Usuario> usuarios = new List<Usuario>();
         private List<Ambiente> ambientes = new List<Ambiente>();
+        private Delete del = new Delete();
 
         internal List<Usuario> Usuarios { get => usuarios; set => usuarios = value; }
         internal List<Ambiente> Ambientes { get => ambientes; set => ambientes = value; }
@@ -28,7 +29,10 @@ namespace projAcessosFila
             if(pesquisarUsuario(usuario).Ambientes.Count() == 0)
             {
                 if (this.usuarios.Remove(pesquisarUsuario(usuario)))
+                {
+                    del.deletaUsuario(usuario.Id);
                     return true;
+                }
                 else
                     return false;
             }
@@ -55,7 +59,10 @@ namespace projAcessosFila
         public bool removerAmbiente(Ambiente ambiente)
         {
             if (this.ambientes.Remove(pesquisarAmbiente(ambiente)))
+            {
+                del.deletaAmbiente(ambiente.Id);
                 return true;
+            }
             else
                 return false;
         }

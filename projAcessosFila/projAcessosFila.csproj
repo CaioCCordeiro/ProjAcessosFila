@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Ambiente.cs" />
     <Compile Include="Cadastro.cs" />
+    <Compile Include="Delete.cs" />
     <Compile Include="Download.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Program.cs" />
